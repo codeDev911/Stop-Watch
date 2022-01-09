@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Fontawesome files -->
+    <link rel="stylesheet" href="./FontAwesome files/fontawesome.css">
+    <script src="./FontAwesome files/fontawesome.js"></script> 
+    <title>Stop Watch</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="content">
+
+            <div class="clock">
+                <div class="times" id='times'>
+                    <span>00</span><i>h</i>:
+                    <span>00</span><i>m</i>:
+                    <span>00</span><i>s</i>
+                </div>
+            </div>
+            <div class="buttons_div">
+                <a href="#" class="button" onclick="start()"><i class="fas fa-stopwatch"></i><strong>Start</strong></a>
+                <a href="#" class="button" onclick="stop()"><i class="fas fa-stop"></i><strong>Stop</strong></a>
+                <a href="#" class="button" onclick="reset()"><i class="fas fa-refresh"></i><strong>Reset</strong></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    var hour = 0; // Hours
+    var min = 0; // Minutes
+    var sec = 0; // seconds
+    var times = document.getElementById('times');
+    var stopTime = true;
+
+    function start() {
+        if(stopTime == true){
+            stopTime = false; 
+            startTiming();
+        }  
+    }
+    function stop(){
+        if (stopTime == false) {
+            stopTime = true;
+        }
+    }
+    function reset() {
+        location.reload();
+    }
+    function startTiming(){
+        if(stopTime == false){ 
+            hour = parseInt(hour);
+            min = parseInt(min);
+            sec = parseInt(sec);  
+            sec = sec + 1; 
+
+            if (sec == 60) { // Get Minutes
+                min = min + 1;
+                sec = 0;
+            }
+            if (min == 60) { // Get Hours
+               hour = hour + 1;
+                min = 0;
+            } 
+
+            if (sec < 10 ) {
+                sec = '0' + sec
+            }
+            if (min < 10 ) {
+                min = '0' + min;
+            }
+            if (hour < 10 ) {
+                hour = '0' + hour;
+            }
+
+
+            times.innerHTML= `
+                    <span>${hour}</span><i>h</i>:
+                    <span>${min}</span><i>m</i>:
+                    <span>${sec}</span><i>s</i>
+            `;
+
+            setTimeout(startTiming , 1000);
+        }
+
+
+
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+body{
+    overflow: hidden;
+
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(36, 36, 36);
+}
+
+.content{
+    width: 100%;
+}
+.clock{
+    position: relative;
+    width: 70%;
+    left: 18%;
+    /* left: 30%; */
+    /* width: 50%; */
+    height: 140px;
+    border: 2px solid rgb(23, 115, 168);
+    font-size: 50px;
+    color: rgb(23, 115, 168);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    letter-spacing: 2px;
+}
+.clock i{
+    font-size: 14px;
+    font-style: normal;
+}
+.buttons_div{
+    position: relative;
+    margin-top: 50px;
+    text-align: left;
+    left: 16%;
+    /* left: 26%; */
+    
+}
+.button{
+    color:rgb(23, 115, 168);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 20px;
+    border: 1px solid rgb(23, 115, 168);
+    padding: .4% 2%;
+    transition: .5s;
+}
+.button strong{
+    font-size: 16px;
+    margin-left: 10px;
+}
+.button:hover{ 
+    border-color: rgb(23, 115, 168);
+
+}
+.button:active , :focus{
+    color: white; 
+    background-color:rgb(23, 115, 168);
+}
